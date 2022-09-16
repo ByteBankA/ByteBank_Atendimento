@@ -1,4 +1,5 @@
 ﻿using bytebank.Modelos.Conta;
+using bytebank_ATENDIMENTO.bytebank.Util;
 
 Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
 
@@ -125,20 +126,17 @@ double MediaDaAmostra(double[] amostra)
 
 }
 
-ArrayDeContasCorrentes();
+
 
 void ArrayDeContasCorrentes()
 {
-    ContaCorrente[] listaDeContas = new ContaCorrente[]
-    {
-        new ContaCorrente(123,"1111222-A"),
-        new ContaCorrente(234,"1111222-B"),
-        new ContaCorrente(345,"1111222-C")
-    };
-
-    for (int i = 0; i < listaDeContas.Length; i++)
-    {
-        ContaCorrente contaAtual = listaDeContas[i];
-        Console.WriteLine($"Índice: {i} - Conta: {contaAtual.Conta}");
-    }
+    ListaDeContasCorrentes listaDeContas = new ListaDeContasCorrentes();
+    listaDeContas.Adicionar(new ContaCorrente(123, "1111222-A"));
+    listaDeContas.Adicionar(new ContaCorrente(234, "1111222-B"));
+    listaDeContas.Adicionar(new ContaCorrente(456, "1111222-C"));
+    listaDeContas.Adicionar(new ContaCorrente(456, "1111222-C"));
+    listaDeContas.Adicionar(new ContaCorrente(456, "1111222-C"));
+    listaDeContas.Adicionar(new ContaCorrente(456, "1111222-C"));
 }
+
+ArrayDeContasCorrentes();
