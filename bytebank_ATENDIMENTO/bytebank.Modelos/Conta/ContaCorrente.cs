@@ -12,6 +12,11 @@
 
 		public string Nome_Agencia { get; set; }
 
+		public ContaCorrente(int numero_agencia, string conta) : this(numero_agencia)
+		{
+			Conta = conta;
+		}
+
 		public int Numero_agencia
 		{
 			get
@@ -111,7 +116,7 @@
 				   $"Número da Conta : {this.Conta} \n" +
 				   $"Titular da Conta: {this.Titular.Nome} \n" +
 				   $"CPF do Titular  : {this.Titular.Cpf} \n" +
-				   $"Profissão do Titular: { this.Titular.Profissao}";
+				   $"Profissão do Titular: {this.Titular.Profissao}";
 		}
 	}
 

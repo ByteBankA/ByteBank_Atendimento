@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
+﻿using bytebank.Modelos.Conta;
+
+Console.WriteLine("Boas Vindas ao ByteBank, Atendimento.");
 
 // TestArrayInt();
 //BuscarPalavra();
@@ -95,7 +97,7 @@ amostragem[1] = 2600;
 amostragem[2] = 2500;
 amostragem[3] = 3400;
 
-MediaDaAmostra(amostragem);
+//MediaDaAmostra(amostragem);
 
 double MediaDaAmostra(double[] amostra)
 {
@@ -119,4 +121,24 @@ double MediaDaAmostra(double[] amostra)
     Console.WriteLine(media);
     return media;
 
+
+
+}
+
+ArrayDeContasCorrentes();
+
+void ArrayDeContasCorrentes()
+{
+    ContaCorrente[] listaDeContas = new ContaCorrente[]
+    {
+        new ContaCorrente(123,"1111222-A"),
+        new ContaCorrente(234,"1111222-B"),
+        new ContaCorrente(345,"1111222-C")
+    };
+
+    for (int i = 0; i < listaDeContas.Length; i++)
+    {
+        ContaCorrente contaAtual = listaDeContas[i];
+        Console.WriteLine($"Índice: {i} - Conta: {contaAtual.Conta}");
+    }
 }
