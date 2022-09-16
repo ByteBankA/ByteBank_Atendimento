@@ -63,7 +63,7 @@ amostra.SetValue(7.1, 2);
 amostra.SetValue(10.3, 3);
 amostra.SetValue(6.9, 4);
 
-Mediana(amostra);
+//Mediana(amostra);
 
 void Mediana(Array array)
 {
@@ -85,4 +85,38 @@ void Mediana(Array array)
     }
 
     Console.WriteLine($"Com base na amostra a mediana = {mediana}");
+}
+
+
+double[] amostragem = new double[4];
+
+amostragem[0] = 3500;
+amostragem[1] = 2600;
+amostragem[2] = 2500;
+amostragem[3] = 3400;
+
+MediaDaAmostra(amostragem);
+
+double MediaDaAmostra(double[] amostra)
+{
+    double media;
+    double acumulador = 0;
+
+    if ((amostra == null) || (amostra.Length == 0))
+    {
+        Console.WriteLine("Amostra de dados nula ou vazia.");
+        return 0;
+    }
+    else
+    {
+        for (int i = 0; i < amostra.Length; i++)
+        {
+            acumulador = acumulador + amostra[i];
+        }
+        media = acumulador / amostra.Length;
+    }
+
+    Console.WriteLine(media);
+    return media;
+
 }
